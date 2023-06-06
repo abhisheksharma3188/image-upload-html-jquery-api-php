@@ -6,19 +6,19 @@
     <body>
         <div style="width:500px;margin:0px auto 0px auto">
             
-            <!--/////////////////////////////// Actual image from server div below ///////////////////////////////////////////-->
+            <!--------------------------------- Actual image from server div below --------------------------------------------->
             <div style="text-align:center;margin-bottom:50px;">
                 <img src="" style="width:200px;height:200px;" alt="Actual Image From Server">
             </div>
-            <!--/////////////////////////////// Actual image from server div above ///////////////////////////////////////////-->
+            <!--------------------------------- Actual image from server div above --------------------------------------------->
             
-            <!--/////////////////////////////// Preview of image to upload div below /////////////////////////////////////////-->
+            <!--------------------------------- Preview of image to upload div below ------------------------------------------->
             <div style="text-align:center;margin-bottom:50px;">
                 <img id="preview_img" src="" style="width:100px;height:100px;" alt="Preview Of Image Being Uploaded">
             </div>
-            <!--/////////////////////////////// Preview of image to upload div above /////////////////////////////////////////-->
+            <!--------------------------------- Preview of image to upload div above ------------------------------------------->
             
-            <!--/////////////////////////////// Upload image form below //////////////////////////////////////////////////////-->
+            <!--------------------------------- Upload image form below -------------------------------------------------------->
             <form id="image_upload_form" action="api.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="text_input" placeholder="Any Text"><br><br>
                 <input id="file_input" type="file" name="file_input"><br><br>
@@ -26,7 +26,7 @@
                 <input type="submit" value="Upload Image" name="submit"><br><br>
                 <div id="image_upload_form_response_div"></div>
             </form>
-            <!--/////////////////////////////// Upload image form above //////////////////////////////////////////////////////-->
+            <!--------------------------------- Upload image form above -------------------------------------------------------->
             
         </div>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
