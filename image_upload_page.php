@@ -8,7 +8,7 @@
             
             <!--------------------------------- Actual image from server div below --------------------------------------------->
             <div style="text-align:center;margin-bottom:50px;">
-                <img src="" style="width:200px;height:200px;" alt="Actual Image From Server">
+                <img id="actual_img" src="" style="width:200px;height:200px;" alt="Actual Image From Server">
             </div>
             <!--------------------------------- Actual image from server div above --------------------------------------------->
             
@@ -56,7 +56,7 @@
                 var formData = new FormData(this);
                 var headers_obj = {"Authorization":"Bearer <?php echo '1234567890' /*@$_COOKIE['jwt_token_website'];*/ ?>"};
                 $.ajax({
-                    url: "api.php",
+                    url: "api/api.php",
                     type: "POST",
                     data: formData,
                     contentType: false,
@@ -74,18 +74,16 @@
                     },
                     success: function(data) {
                         console.log(data);
-                        /*if (data.response == 'success') {
-                            $("#data_upload_form_response_div").css({"color":"green"});
-                            $("#data_upload_form_response_div").html(data.message);
-                            fetch_data();
+                        if (data.response == 'success') {
+                            $("#image_upload_form_response_div").css({"color":"green"});
+                            $("#image_upload_form_response_div").html(data.message);
+                            document.getElementById('actual_img').src=`image_uploads/${data.image_new_name}`;
                         }
                         if (data.response == 'failure') {
-                            $("#data_upload_form_response_div").css({"color":"red"});
-                            $("#data_upload_form_response_div").html(data.message);
+                            $("#image_upload_form_response_div").css({"color":"red"});
+                            $("#image_upload_form_response_div").html(data.message);
                         }
-                        $("#data_upload_form_progress").css({"display":"none"});
-                        $("#data_upload_form_progress_percentage_display_div").css({"display":"none"});
-                        $("#data_upload_form_spinner_div").css({"display":"none"});*/
+                        document.getElementById('image_upload_progress').value=0;
                     },
                     error: function() {
                         alert('Some Error Occured.');
